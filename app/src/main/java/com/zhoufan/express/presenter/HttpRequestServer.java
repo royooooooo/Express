@@ -21,7 +21,7 @@ import rx.schedulers.Schedulers;
 public class HttpRequestServer {
     private static Context mContext;
     //基础请求地址
-    private static String base_url;
+    private static String base_url = "http://39.108.120.110:8081";
     private static OkHttpClient mClient;
     private static HttpAPI mHttpAPI;
 

@@ -23,7 +23,7 @@ import rx.Observable;
 public interface HttpAPI {
 
     //基础地址
-    String BASE_URL = "http://39.108.120.110:8080";
+    String BASE_URL = "http://39.108.120.110:8081";
 
     /**
      * 提交json数据

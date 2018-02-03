@@ -30,14 +30,14 @@ public class ResponseUtil {
     }
 
     public static boolean verify(ResponseBody responseBody,boolean haveMsg){
-        boolean isTure = true;
+        boolean verifySuccesses = true;
         try {
             String responseStr = responseBody.string();
             KLog.i(responseStr);
             JSONObject jsonObject = new JSONObject(responseStr);
             int code = jsonObject.getInt("status");
             if (code!=200){
-                isTure = false;
+                verifySuccesses = false;
             }else {
                 if (haveMsg){
                     message = jsonObject.getString("data");
@@ -48,8 +48,8 @@ public class ResponseUtil {
         } catch (Exception e) {
             e.printStackTrace();
             KLog.i("网络错误");
-            isTure = false;
+            verifySuccesses = false;
         }
-        return isTure;
+        return verifySuccesses;
     }
 }
