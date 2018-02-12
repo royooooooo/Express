@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 login();
                 break;
             case R.id.signUp_btn:
+                startActivity(new Intent(this,RegisterActivity.class));
                 break;
         }
     }

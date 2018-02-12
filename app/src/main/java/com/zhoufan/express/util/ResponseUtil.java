@@ -20,12 +20,14 @@ public class ResponseUtil {
     // TODO: 2017/10/24 反射获取类实现需要修改
     public static Object getByType(Type type){
         Object object = null;//反射机制返回的类
+
         try {
             object = GsonFactory.getInstence().fromJson(message,type);//转换成相应类
         } catch (Exception e) {
             e.printStackTrace();
             KLog.i("类编译错误");
         }
+
         return object;
     }
 

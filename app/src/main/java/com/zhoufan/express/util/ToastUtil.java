@@ -33,4 +33,6 @@ public class ToastUtil {
     public void log(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
+
+    public void networkError(){Toast.makeText(context,"网络加载错误...",Toast.LENGTH_SHORT).show();}
 }

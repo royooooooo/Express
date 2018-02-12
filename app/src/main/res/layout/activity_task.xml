@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhoufan.express.activity.TaskActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="发布日期：" />
+
+        <EditText
+            android:id="@+id/task_time_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="任务说明：" />
+
+        <EditText
+            android:id="@+id/task_info_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="任务酬劳：" />
+
+        <EditText
+            android:id="@+id/task_money_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="任务联系人：" />
+
+        <EditText
+            android:id="@+id/task_people_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="任务联系方式：" />
+
+        <EditText
+            android:id="@+id/task_people_phone_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/task_get_number_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/task_name_tv"
+            android:text="取货码：" />
+
+        <EditText
+            android:id="@+id/task_get_number_et"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/employee_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            style="@style/task_name_tv"
+            android:text="领取人：" />
+
+        <TextView
+            android:id="@+id/employee_tv"
+            style="@style/task_value_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/eva_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            style="@style/task_name_tv"
+            android:text="评论列表：" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/eva_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:id="@+id/focuce_ll"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:background="#999">
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/add_eva_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
+        <RadioGroup
+            android:id="@+id/eva_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/eva_good_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="好评"/>
+            <RadioButton
+                android:id="@+id/eva_common_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中评"/>
+            <RadioButton
+                android:id="@+id/eva_bad_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="差评"/>
+        </RadioGroup>
+        <Button
+            android:id="@+id/add_eva_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eva_rg"
+            android:layout_centerHorizontal="true"
+            android:text="确定"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/get_goods_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/get_goods_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="取货码："
+            android:textSize="16sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/add_task_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/add_task_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="添加"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/get_task_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/get_task_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="领取"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/finish_task_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/finish_task_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="完成"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+</LinearLayout>

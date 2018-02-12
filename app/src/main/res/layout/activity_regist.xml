@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhoufan.express.activity.RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="注册"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/name_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="用户名"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/password_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/name_et"
+        android:layout_below="@+id/name_et"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="密码"
+        android:inputType="numberPassword" />
+
+    <EditText
+        android:id="@+id/phone_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/password_et"
+        android:layout_below="@+id/password_et"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="手机号"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/user_info_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/phone_et"
+        android:layout_below="@+id/phone_et"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="个人简介"
+        android:inputType="text" />
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/user_info_et"
+        android:layout_below="@+id/user_info_et"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_sex_men"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="男"
+            />
+        <RadioButton
+            android:id="@+id/rb_sex_women"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="女"
+            />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/area_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/phone_et"
+        android:layout_alignStart="@+id/phone_et"
+        android:layout_below="@+id/rg_sex"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/area_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="代理人:"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/area_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/area_tv"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/area_tv"/>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/phone_et"
+        android:layout_alignLeft="@+id/area_rl"
+        android:layout_alignRight="@+id/phone_et"
+        android:layout_alignStart="@+id/area_rl"
+        android:layout_below="@+id/area_rl"
+        android:layout_marginTop="25dp"
+        android:text="注册" />
+</RelativeLayout>

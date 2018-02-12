@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">快递代领系统</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
