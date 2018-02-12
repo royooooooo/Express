@@ -118,7 +118,8 @@ public class TaskActivity extends AppCompatActivity {
     private void initView() {
         switch (task.getTask_status()) {
             case 1:
-                getTaskRl.setVisibility(View.VISIBLE);
+                if (task.getUser_id() != UserUtil.getCurrentUser().getUser_id())
+                    getTaskRl.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 employeeLl.setVisibility(View.VISIBLE);
@@ -126,23 +127,22 @@ public class TaskActivity extends AppCompatActivity {
                 if (task.getUser_id() == UserUtil.getCurrentUser().getUser_id()) {
                     getGoodsRl.setVisibility(View.VISIBLE);
                     getGoodsTv.setText("取货码：" + task.getTask_name());
+                }else if (task.getTask_user() == (UserUtil.getCurrentUser().getUser_id())){
                     finishTaskRl.setVisibility(View.VISIBLE);
                 }
                 break;
             case 3:
-                if (task.getTask_user() == UserUtil.getCurrentUser().getUser_id()) {
-                    if (task.getEva_id() == 1) {
-                        getGoodsRl.setVisibility(View.VISIBLE);
-                        getGoodsTv.setText("雇主评价：好评");
-                    } else if (task.getEva_id() == 2) {
-                        getGoodsRl.setVisibility(View.VISIBLE);
-                        getGoodsTv.setText("雇主评价：中评");
-                    } else if (task.getEva_id() == 3) {
-                        getGoodsRl.setVisibility(View.VISIBLE);
-                        getGoodsTv.setText("雇主评价：差评");
-                    } else {
-                        addEvaRl.setVisibility(View.VISIBLE);
-                    }
+                if (task.getEva_id() == 1) {
+                    getGoodsRl.setVisibility(View.VISIBLE);
+                    getGoodsTv.setText("雇主评价：好评");
+                } else if (task.getEva_id() == 2) {
+                    getGoodsRl.setVisibility(View.VISIBLE);
+                    getGoodsTv.setText("雇主评价：中评");
+                } else if (task.getEva_id() == 3) {
+                    getGoodsRl.setVisibility(View.VISIBLE);
+                    getGoodsTv.setText("雇主评价：差评");
+                } else {
+                    addEvaRl.setVisibility(View.VISIBLE);
                 }
                 break;
             default:
@@ -188,7 +188,7 @@ public class TaskActivity extends AppCompatActivity {
         taskInfoEt.setFocusable(false);
         taskMoneyEt.setText(String.valueOf(task.getTask_money()));
         taskMoneyEt.setFocusable(false);
-        taskPeopleEt.setText(task.getUser_name());
+        taskPeopleEt.setText(task.getTask_people());
         taskPeopleEt.setFocusable(false);
         taskPeoplePhoneEt.setText(task.getTask_phone());
         taskPeoplePhoneEt.setFocusable(false);
@@ -240,7 +240,7 @@ public class TaskActivity extends AppCompatActivity {
 
             @Override
             public void onNext(ResponseBody responseBody) {
-                if (ResponseUtil.verify(responseBody,false)){
+                if (ResponseUtil.verify(responseBody, false)) {
                     ToastUtil.getInstance().log("添加任务成功");
                     refreshAty();
 
@@ -333,10 +333,10 @@ public class TaskActivity extends AppCompatActivity {
         });
     }
 
-    public void refreshAty(){
+    public void refreshAty() {
         finish();
-        Intent intent = new Intent(TaskActivity.this,TaskActivity.class);
-        intent.putExtra("task",task);
+        Intent intent = new Intent(TaskActivity.this, TaskActivity.class);
+        intent.putExtra("task", task);
         startActivity(intent);
     }
 

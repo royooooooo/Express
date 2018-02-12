@@ -114,7 +114,13 @@ public class MyTaskActivity extends AppCompatActivity {
     private void initToolbar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("我的任务");
+            String title = "";
+            if (getIntent().getIntExtra("model",0) == 1){
+                title = "已领取任务";
+            }else{
+                title = "已发布任务";
+            }
+            actionBar.setTitle(title);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
